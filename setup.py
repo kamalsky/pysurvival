@@ -11,15 +11,7 @@ import codecs
 import re
 import glob
 from setuptools import setup, Extension, find_packages
-
-# Checking if numpy is installed
-try:
-  import numpy
-except:
-  import subprocess
-  print("numpy is not installed. So pysurvival will install it now.")
-  subprocess.call("pip install numpy", shell=True)
-  import numpy
+import numpy
 
 # Package meta-data.
 NAME = 'pysurvival'
