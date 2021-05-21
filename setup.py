@@ -11,7 +11,7 @@ import codecs
 import re
 import glob
 from setuptools import setup, Extension, find_packages
-import numpy
+#import numpy
 
 # Package meta-data.
 NAME = 'pysurvival'
