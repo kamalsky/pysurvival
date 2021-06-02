@@ -11,6 +11,7 @@ import codecs
 import re
 import glob
 from setuptools import setup, Extension, find_packages
+import numpy
 '''
 try:
   import numpy
