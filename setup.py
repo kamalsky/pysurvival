@@ -11,13 +11,21 @@ import codecs
 import re
 import glob
 from setuptools import setup, Extension, find_packages
-
+'''
 try:
   import numpy
 except:
   import subprocess
   print("numpy is not installed. So pysurvival will install it now.")
-  subprocess.call("pip install numpy")
+  subprocess.call("pip install numpy", shell=True)
+  import numpy
+'''
+try:
+  import numpy
+except:
+  import os
+  import sys
+  os.system(f'{sys.executable} -m pip install numpy') #take care for path of file
   import numpy
 
 
