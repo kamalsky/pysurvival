@@ -17,7 +17,7 @@ try:
 except:
   import subprocess
   print("numpy is not installed. So pysurvival will install it now.")
-  subprocess.call("pip install numpy", shell=True)
+  subprocess.call("pip install numpy")
   import numpy
 
 
