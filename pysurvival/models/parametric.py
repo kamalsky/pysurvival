@@ -7,6 +7,7 @@ from pysurvival import utils, HAS_GPU
 from pysurvival.utils import optimization as opt
 from pysurvival.utils import neural_networks as nn
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class BaseParametricModel(BaseModel):
     """ Base class for all the Parametric estimators:
@@ -77,7 +78,13 @@ class BaseParametricModel(BaseModel):
         #     X = X.cuda(async=True)
         #     T = T.cuda(async=True)
         #     E = E.cuda(async=True)
-        #     model = model.cuda()   
+        #     model = model.cuda() 
+        
+         if HAS_GPU:
+             X = X.to(device)
+             T = T.to(device)
+             E = E.to(device)
+             model = model.to(device) 
 
         # Hazard & Survival calculations
         hazard, Survival = self.get_hazard_survival(model, X, T)
