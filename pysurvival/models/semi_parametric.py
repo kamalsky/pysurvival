@@ -12,6 +12,8 @@ from pysurvival.models import BaseModel
 from pysurvival.models._coxph import _CoxPHModel
 from pysurvival.models._coxph import _baseline_functions
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 class CoxPHModel(BaseModel):
     """ Cox proportional hazards model:
