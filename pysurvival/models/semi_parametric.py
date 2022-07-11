@@ -205,6 +205,7 @@ class CoxPHModel(BaseModel):
         E = E[order]
         X = self.scaler.fit_transform( X[order, :] )
         self.std_scale = np.sqrt( self.scaler.var_ )
+        
 
         # Initializing the model
         self.model = _CoxPHModel()
@@ -428,6 +429,7 @@ class NonLinearCoxPHModel(BaseModel):
         """ Efron's approximation loss function by vectorizing 
             all the quantities at stake
         """
+     
 
         # Calculating the score
         pre_score = model(X)
